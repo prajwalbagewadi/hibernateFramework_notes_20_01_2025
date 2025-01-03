@@ -1,0 +1,13 @@
+package pkg;
+
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+public class OneDArray {
+	public static void main(String[] args) {
+		//syntax
+		// data-type arr_name[] = new data-type(size)
+		int arr[] = new int(5);
+	}
+}

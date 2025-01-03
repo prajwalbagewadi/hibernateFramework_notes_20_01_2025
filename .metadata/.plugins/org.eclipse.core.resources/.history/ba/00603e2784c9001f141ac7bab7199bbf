@@ -1,0 +1,13 @@
+package TwoDarr;
+
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+public class Main {
+	public static void main() {
+		int arr[][]=new int[5][5]; //dynamic
+		
+		int arr1[][] = {{1,2,3},{4,5,6}}; //static declaration
+	}
+}
