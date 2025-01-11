@@ -72,17 +72,37 @@ public class Main {
 		//compare
 		//equals()
 		//compareTo()
+		String s1="hello";
+		String s2="hello";
+		String s3="world";
+		String s4="helko";
+		System.out.println("s1.equals(s2) "+s1.equals(s2));
+		System.out.println("s1.equals(s3) "+s1.equals(s3));
+		System.out.println("s1.compareTo(s2) "+s1.compareTo(s2));
+		System.out.println("s1.compareTo(s3) "+s1.compareTo(s3));
+		System.out.println("s1.compareTo(s4) "+s1.compareTo(s4));
 		
 		//reverse
 //		String str = "Java";
 //		String reversed = new StringBuilder(str).reverse().toString();
 //		System.out.println(reversed); // "avaJ"
-
+		String srt6="hello";
+		StringBuilder obj=new StringBuilder(srt6);		
+		System.out.println("obj.reverse().toString() "+obj.reverse().toString());
+		
 		//split join
 //		String str = "apple,banana,orange";
 //		String[] fruits = str.split(",");
 //		String joined = String.join(" | ", fruits);
 //		System.out.println(joined); // "apple | banana | orange"
-
+		
+		String strsplit= "apple,apple,apple";
+		String[] cart1 =strsplit.split(",");
+		//System.out.println("cart1 "+cart1);
+		for(int i=0;i<cart1.length;i++) {
+			System.out.println("cart1[] "+cart1[i]);
+		}
+		String strjoin=String.join("$", cart1);
+		System.out.println("strjoin "+strjoin);
 	}
 }
