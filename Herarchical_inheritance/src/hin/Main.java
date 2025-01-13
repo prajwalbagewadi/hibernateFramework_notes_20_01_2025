@@ -1,5 +1,4 @@
-package inheritance;
-
+package hin;
 
 class Hospital {
 	int hid;
@@ -36,38 +35,40 @@ class Patient extends Hospital {
 		System.out.println("Patient age="+age);
 		super.display();  //call to display() hospital
 	}
-	
-}
+}	
 
-
-class LegalGuardian extends Patient {
-	int lgid;
-	String lname;
-	String Phone;
+class Doctor extends Hospital {
+	int did;
+	String dname;
+	int dage;
+	String dspec;
 	
-	LegalGuardian(int lid,int pid,String ln,String pn,int age,String phone) {
-		super(pid,pn,age); //constructor call to Patient
-		lgid=lid;
-		lname=ln;
-		//this.lname=lname; //this : refers to current class object
-		Phone=phone;
+	Doctor(int id,String n,int age,String d) {
+		super(); //to call parent class constructor 
+		did=id;
+		dname=n;
+		dage=age;
+		dspec=d;
 	}
 	
 	void display() {
-		System.out.println("Legal Guardian details=");
-		System.out.println("Legal Guardian id="+lgid);
-		System.out.println("Legal Guardian name="+lname);
-
-		System.out.println("Legal Guardian phone="+Phone);
-		super.display();//call to display() Patient
+		System.out.println("Doctor details=");
+		System.out.println("Doctor id="+did);
+		System.out.println("Doctor name="+dname);
+		System.out.println("Doctor age="+dage);
+		System.out.println("Doctor Specilization="+dspec);
+		super.display();  //call to display() hospital
 	}
 }
 
 public class Main {
+
 	public static void main(String[] args) {
-//		Patient p1 = new Patient(1,"abc",25); // object for single level
-//		p1.display();
-		LegalGuardian lg1 = new LegalGuardian(1,1,"def","abc",25,"999-9999");
-		lg1.display();
+		// TODO Auto-generated method stub
+		Patient p1=new Patient(1,"abc",23);
+		Doctor d1=new Doctor(101,"dr.doc",25,"Cardiology");
+		d1.display();
+		p1.display();
 	}
+
 }
