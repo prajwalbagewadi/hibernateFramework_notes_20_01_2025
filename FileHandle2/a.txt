@@ -1,6 +1,1 @@
-java
-
-
-wer
-java
-javajavais
+java is object based

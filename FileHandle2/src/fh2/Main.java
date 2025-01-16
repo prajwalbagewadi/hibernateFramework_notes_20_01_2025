@@ -41,8 +41,12 @@ public class Main {
 				
 				for(int i=0;i<lno;i++) {
 					System.out.println("line=");
-					content[i]=sc.next();
-					bw.append(content[i]);
+//					while(sc.hasNext()) {
+//						content[i]=sc.next();
+//					}
+					content[i]=sc.nextLine();
+					content[i]+=sc.nextLine();
+					bw.write(content[i]);
 			}
 			bw.close();
 			fw.close();
