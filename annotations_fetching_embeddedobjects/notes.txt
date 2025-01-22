@@ -1,6 +1,6 @@
 Hibernate – Annotations:
 
-@Entity 	      Used for declaring any POJO(Plain old Java object) class as an entity for a 		                   database
+@Entity 	      Used for declaring any POJO(Plain old Java object) class as an entity for a database
 
 @Table          Used to change table details, some of the attributes are-
 		            name – override the table name
@@ -10,7 +10,7 @@ Hibernate – Annotations:
 
 @Id		          Used for declaring a primary key inside our POJO class
 
-@Column	        It is used to specify column mappings. It means if in case we don’t need the 		                   name of the column that we declare in POJO but we need to refer to that entity you                 can change the name for the database table. Some attributes are-
+@Column	        It is used to specify column mappings. It means if in case we don’t need the name of the column that we declare in POJO but we need to refer to that entity you can change the name for the database table. Some attributes are-
 
 		            Name – We can change the name of the entity for the database
 		            length – the size of the column mostly used in strings
@@ -20,3 +20,32 @@ Hibernate – Annotations:
 @Transient	    Tells the hibernate, not to add this particular column
 
 @Temporal	      This annotation is used to format the date for storing in the database
+
+
+
+Fetching Data from Database :
+1. start transaction (Transaction transaction = session.beginTransaction();)
+2. create class object = null
+3. object=(class) session.get(Entity.Class)
+4. object.toString() -> toString method must be created in entity and Embedded class.
+5. end transaction (transaction.commit();)
+6. sop(object)
+
+Update Operation in table :
+1. start transaction
+2. create class object = session.get(Entity.Class,PrimaryKey)
+3. object.setMethod_col_name(value)
+4. session.update(object)
+5. end transaction
+
+Delete Operation in table :
+1. start transaction
+2. create class object = session.get(Entity.Class,PrimaryKey)
+4. session.delete(object)
+5. end transaction
+
+Embedded Objects : used to provide additional information to a column in table.
+		  eg : name col can be expanded (firstname,middlename,lastname).
+1. create new class with the expanding attributes 
+2. mark class with @Embeddable
+3. use class(@Embeddable) as datatype for column in class(@Entity)
