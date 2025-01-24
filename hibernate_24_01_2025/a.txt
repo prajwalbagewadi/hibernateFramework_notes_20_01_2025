@@ -1,1 +1,2 @@
-
+embedded objects
+and hql started.
